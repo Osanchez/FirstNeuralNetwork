@@ -33,13 +33,15 @@ if __name__ == "__main__":
     print("Initial Synaptic Weights:")
     predictor = ColorPredictor()
 
-    print("Randomly Generated Colors:")
     # input data that the model will train on
-    training_inputs = np.array(np.random.randint(0, 255, size=(4, 1, 3)))
-    print(training_inputs)
+    randomized_colors = np.array(np.random.randint(0, 255, size=(4, 1, 3)))
+    print("Randomized Colors: ")
+
+    for color in randomized_colors:
+        print(color[0])
 
     # displays the random colors
-    plt.imshow(training_inputs)
+    plt.imshow(randomized_colors)
     plt.show()
 
     # expected results for input data
