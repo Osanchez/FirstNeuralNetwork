@@ -45,6 +45,15 @@ if __name__ == "__main__":
     predictor = ColorPredictor()
 
     # training data
+
+    # TODO: randomized color sample is not actually used for training
+    # randomized colors
+    random_generated_sample = np.random.randint(0, 255, size=(4, 1, 3))
+    random_colors = np.array(list(x[0] for x in random_generated_sample))
+    print("random colors: ")
+    print(random_colors)
+
+    # sampled colors
     colors_sample = np.array([
         [[0, 0, 0]],
         [[255, 255, 255]],
@@ -65,6 +74,7 @@ if __name__ == "__main__":
 
     # expected results for input data
     # 1 - Black, 0 - White
+    print("expected output: ")
     training_output = np.array([[0, 1, 1, 1, 0, 0]]).T
     print(training_output)
 
