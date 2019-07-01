@@ -45,23 +45,27 @@ if __name__ == "__main__":
     predictor = ColorPredictor()
 
     # training data
-    randomized_colors = np.array([
+    colors_sample = np.array([
         [[0, 0, 0]],
         [[255, 255, 255]],
+        [[126, 126, 126]],
+        [[255, 0, 0]],
+        [[126, 0, 0]],
+        [[110, 0, 0]]
     ])
 
     # input data that the model will train on
     print("Training Data: ")
-    training_inputs = np.array(list(x[0] for x in randomized_colors))
+    training_inputs = np.array(list(x[0] for x in colors_sample))
     print(training_inputs)
 
     # displays the random colors in sci view
-    plt.imshow(randomized_colors)
+    plt.imshow(colors_sample)
     plt.show()
 
     # expected results for input data
     # 1 - Black, 0 - White
-    training_output = np.array([[0, 1]]).T
+    training_output = np.array([[0, 1, 1, 1, 0, 0]]).T
     print(training_output)
 
     predictor.train(training_inputs, training_output, 100000)
