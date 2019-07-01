@@ -38,3 +38,5 @@ print(synaptic_weights)
 
 print("Outputs after training: ")
 print(outputs)
+
+
